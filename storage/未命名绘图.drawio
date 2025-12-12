@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.2.7">
+  <diagram name="第 1 页" id="OoE3DrBe1XHSMtCTzDSt">
+    <mxGraphModel dx="2040" dy="657" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Yvbjms17H03s8BBAeWv4-1" parent="1" style="whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;" value="ai_agent&#xa;- id (PK)&#xa;- agent_id (UK)&#xa;- agent_name&#xa;- channel&#xa;- status" vertex="1">
+          <mxGeometry height="110" width="260" x="-310" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="Yvbjms17H03s8BBAeWv4-2" parent="1" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;" value="ai_client&#xa;- id (PK)&#xa;- client_id (UK)&#xa;- client_name&#xa;- status" vertex="1">
+          <mxGeometry height="110" width="260" x="170" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="Yvbjms17H03s8BBAeWv4-3" parent="1" style="whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;rounded=1;" value="ai_client_api&#xa;- id (PK)&#xa;- api_id (UK)&#xa;- base_url&#xa;- api_key&#xa;- status" vertex="1">
+          <mxGeometry height="120" width="280" x="1090" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Yvbjms17H03s8BBAeWv4-4" parent="1" style="whiteSpace=wrap;html=1;fillColor=#cfe2f3;strokeColor=#6fa8dc;rounded=1;" value="ai_agent_flow_config&#xa;- id (PK)&#xa;- agent_id (FK→ai_agent.id)&#xa;- client_id (FK→ai_client.id)&#xa;- sequence (UK part)" vertex="1">
+          <mxGeometry height="120" width="280" x="-240" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="Yvbjms17H03s8BBAeWv4-5" parent="1" style="whiteSpace=wrap;html=1;fillColor=#cfe2f3;strokeColor=#6fa8dc;rounded=1;" value="ai_agent_task_schedule&#xa;- id (PK)&#xa;- agent_id (FK→ai_agent.id)&#xa;- task_name&#xa;- cron_expression&#xa;- status" vertex="1">
+          <mxGeometry height="120" width="280" x="-570" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="Yvbjms17H03s8BBAeWv4-6" parent="1" style="whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" value="ai_client_model&#xa;- id (PK)&#xa;- model_id (UK)&#xa;- api_id (FK→ai_client_api.api_id)&#xa;- model_name&#xa;- model_type" vertex="1">
+          <mxGeometry height="120" width="260" x="690" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Yvbjms17H03s8BBAeWv4-7" parent="1" style="whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;rounded=1;" value="ai_client_config&#xa;- id (PK)&#xa;- source_type (client/model)&#xa;- source_id (client_id/model_id)&#xa;- target_type (model/prompt/advisor/tool_mcp)&#xa;- target_id (model_id/prompt_id/advisor_id/mcp_id)" vertex="1">
+          <mxGeometry height="140" width="300" x="670" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="Yvbjms17H03s8BBAeWv4-8" parent="1" style="whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;rounded=1;" value="ai_client_system_prompt&#xa;- id (PK)&#xa;- prompt_id (UK)&#xa;- prompt_name" vertex="1">
+          <mxGeometry height="120" width="260" x="500" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="Yvbjms17H03s8BBAeWv4-9" parent="1" style="whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;rounded=1;" value="ai_client_advisor&#xa;- id (PK)&#xa;- advisor_id (UK)&#xa;- advisor_type&#xa;- order_num" vertex="1">
+          <mxGeometry height="120" width="260" x="890" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="Yvbjms17H03s8BBAeWv4-10" parent="1" style="whiteSpace=wrap;html=1;fillColor=#d0e9ff;strokeColor=#4a86e8;rounded=1;" value="ai_client_tool_mcp&#xa;- id (PK)&#xa;- mcp_id (UK)&#xa;- transport_type&#xa;- request_timeout" vertex="1">
+          <mxGeometry height="120" width="260" x="1100" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="Yvbjms17H03s8BBAeWv4-11" parent="1" style="whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#999999;rounded=1;" value="ai_client_rag_order&#xa;- id (PK)&#xa;- rag_id (UK)&#xa;- rag_name&#xa;- knowledge_tag" vertex="1">
+          <mxGeometry height="120" width="260" x="880" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="Yvbjms17H03s8BBAeWv4-12" edge="1" parent="1" source="Yvbjms17H03s8BBAeWv4-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#6c8ebf;endArrow=classic;labelBackgroundColor=#ffffff;" target="Yvbjms17H03s8BBAeWv4-1" value="agent_id → id">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Yvbjms17H03s8BBAeWv4-13" edge="1" parent="1" source="Yvbjms17H03s8BBAeWv4-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#82b366;endArrow=classic;labelBackgroundColor=#ffffff;" target="Yvbjms17H03s8BBAeWv4-2" value="client_id → id">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Yvbjms17H03s8BBAeWv4-14" edge="1" parent="1" source="Yvbjms17H03s8BBAeWv4-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#6c8ebf;endArrow=classic;labelBackgroundColor=#ffffff;" target="Yvbjms17H03s8BBAeWv4-1" value="agent_id → id">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Yvbjms17H03s8BBAeWv4-15" edge="1" parent="1" source="Yvbjms17H03s8BBAeWv4-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#9673a6;endArrow=classic;labelBackgroundColor=#ffffff;" target="Yvbjms17H03s8BBAeWv4-3" value="api_id → api_id">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Yvbjms17H03s8BBAeWv4-16" edge="1" parent="1" source="Yvbjms17H03s8BBAeWv4-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#d79b00;endArrow=classic;labelBackgroundColor=#ffffff;" target="Yvbjms17H03s8BBAeWv4-2" value="source_type=client · source_id → client_id">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Yvbjms17H03s8BBAeWv4-17" edge="1" parent="1" source="Yvbjms17H03s8BBAeWv4-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#d79b00;endArrow=classic;labelBackgroundColor=#ffffff;" target="Yvbjms17H03s8BBAeWv4-6" value="target_type=model · target_id → model_id">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Yvbjms17H03s8BBAeWv4-18" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#d79b00;endArrow=classic;labelBackgroundColor=#ffffff;" value="target_type=prompt · target_id → prompt_id">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="440" />
+              <mxPoint x="490" y="440" />
+            </Array>
+            <mxPoint x="820.0769230769229" y="420" as="sourcePoint" />
+            <mxPoint x="630.0769230769229" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Yvbjms17H03s8BBAeWv4-19" edge="1" parent="1" source="Yvbjms17H03s8BBAeWv4-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#d79b00;endArrow=classic;labelBackgroundColor=#ffffff;" target="Yvbjms17H03s8BBAeWv4-9" value="target_type=advisor · target_id → advisor_id">
+          <mxGeometry relative="1" x="0.375" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Yvbjms17H03s8BBAeWv4-20" edge="1" parent="1" source="Yvbjms17H03s8BBAeWv4-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#d79b00;endArrow=classic;labelBackgroundColor=#ffffff;" target="Yvbjms17H03s8BBAeWv4-6" value="source_type=model · source_id → model_id">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Yvbjms17H03s8BBAeWv4-21" edge="1" parent="1" source="Yvbjms17H03s8BBAeWv4-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#d79b00;endArrow=classic;labelBackgroundColor=#ffffff;" target="Yvbjms17H03s8BBAeWv4-10" value="target_type=tool_mcp · target_id → mcp_id">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Yvbjms17H03s8BBAeWv4-22" edge="1" parent="1" source="Yvbjms17H03s8BBAeWv4-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#999999;endArrow=classic;dashed=1;labelBackgroundColor=#ffffff;" target="Yvbjms17H03s8BBAeWv4-11" value="逻辑：Advisor(RagAnswer) 使用 RAG 配置">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
