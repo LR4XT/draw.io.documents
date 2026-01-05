@@ -1,0 +1,190 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.2.9">
+  <diagram name="第 1 页" id="dKT13xJDE9L94NrxKRlh">
+    <mxGraphModel dx="1851" dy="2278" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="开始主函数 strStr&#xa;Start strStr" vertex="1">
+          <mxGeometry height="70" width="165" x="417.5" y="-50" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="判断模式串是否为空&#xa;needle.length() == 0?" vertex="1">
+          <mxGeometry height="70" width="160" x="420" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="空模式串，直接返回起始下标 0&#xa;Return 0" vertex="1">
+          <mxGeometry height="100" width="200" x="770" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="初始化 next 数组并构建部分匹配表&#xa;Init next[]&#xa;Call getNext(next, needle)" vertex="1">
+          <mxGeometry height="100" width="200" x="400" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="初始化匹配指针位置&#xa;j = -1&#xa;i = 0" vertex="1">
+          <mxGeometry height="100" width="200" x="400" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="主串是否还有未匹配的字符&#xa;i &lt; haystack.length()?" vertex="1">
+          <mxGeometry height="100" width="200" x="400" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="遍历结束仍未匹配成功，返回 -1&#xa;Return -1" vertex="1">
+          <mxGeometry height="100" width="200" x="130" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="当前字符失配，利用 next 表回退 j&#xa;j &gt;= 0 &amp;&amp;&#xa;haystack[i] != needle[j+1]?" vertex="1">
+          <mxGeometry height="100" width="200" x="400" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="根据 next 表回退到上一个可匹配位置&#xa;j = next[j]" vertex="1">
+          <mxGeometry height="100" width="200" x="650" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="当前字符是否匹配下一个模式字符&#xa;haystack[i] == needle[j+1]?" vertex="1">
+          <mxGeometry height="100" width="200" x="400" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="匹配成功，模式串指针后移一位&#xa;j++" vertex="1">
+          <mxGeometry height="100" width="200" x="160" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="是否已经匹配到模式串的最后一个字符&#xa;j == needle.length() - 1?" vertex="1">
+          <mxGeometry height="100" width="200" x="400" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="找到完整匹配，返回模式在主串中的起始下标&#xa;Return i - needle.len + 1" vertex="1">
+          <mxGeometry height="100" width="200" x="400" y="1069" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="当前主串索引后移一位，继续尝试匹配&#xa;i++" vertex="1">
+          <mxGeometry height="100" width="200" x="680" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="主流程结束&#xa;End" vertex="1">
+          <mxGeometry height="100" width="200" x="400" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="开始构建 next 数组&#xa;Start getNext" vertex="1">
+          <mxGeometry height="100" width="200" x="1190" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="初始化 j 为 -1，首位前缀长度为 -1&#xa;j = -1&#xa;next[0] = j" vertex="1">
+          <mxGeometry height="100" width="200" x="1190" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="从模式串下标 1 开始向后构建&#xa;i = 1" vertex="1">
+          <mxGeometry height="100" width="200" x="1190" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="是否还有字符需要更新 next 值&#xa;i &lt; s.length()?" vertex="1">
+          <mxGeometry height="100" width="200" x="1190" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-20" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="next 数组构建完成，返回调用者&#xa;Return" vertex="1">
+          <mxGeometry height="100" width="200" x="920" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="当前字符失配，按 next 表回退 j&#xa;j &gt;= 0 &amp;&amp;&#xa;s[i] != s[j+1]?" vertex="1">
+          <mxGeometry height="100" width="200" x="1190" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="根据 next 表回退到上一个前缀位置&#xa;j = next[j]" vertex="1">
+          <mxGeometry height="100" width="200" x="1390" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="当前字符是否能和前缀的下一个字符匹配&#xa;s[i] == s[j+1]?" vertex="1">
+          <mxGeometry height="100" width="200" x="1190" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-24" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="匹配成功，前缀长度加一&#xa;j++" vertex="1">
+          <mxGeometry height="100" width="200" x="1390" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="记录当前位置 i 的最长相等前后缀长度&#xa;next[i] = j" vertex="1">
+          <mxGeometry height="100" width="200" x="1190" y="1050" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-26" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="i 后移一位，继续构建 next&#xa;i++" vertex="1">
+          <mxGeometry height="100" width="200" x="1190" y="1220" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-27" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;strokeColor=#666666;" target="A-JFsdlmlIhan-1mKQRK-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-28" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-2" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#b85450;" target="A-JFsdlmlIhan-1mKQRK-3" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="890" y="105" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-29" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-3" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#b85450;" target="A-JFsdlmlIhan-1mKQRK-15" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-30" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-2" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#6c8ebf;" target="A-JFsdlmlIhan-1mKQRK-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-31" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-4" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#6c8ebf;" target="A-JFsdlmlIhan-1mKQRK-5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-32" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-5" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#6c8ebf;" target="A-JFsdlmlIhan-1mKQRK-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-33" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-6" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#b85450;" target="A-JFsdlmlIhan-1mKQRK-7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-34" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-7" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#b85450;" target="A-JFsdlmlIhan-1mKQRK-15" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-35" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-6" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#6c8ebf;" target="A-JFsdlmlIhan-1mKQRK-8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-36" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-8" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#6c8ebf;" target="A-JFsdlmlIhan-1mKQRK-9" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-37" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-9" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#999999;" target="A-JFsdlmlIhan-1mKQRK-8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-38" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-8" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#6c8ebf;" target="A-JFsdlmlIhan-1mKQRK-10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-39" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-10" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#6c8ebf;" target="A-JFsdlmlIhan-1mKQRK-11" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-40" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-11" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#6c8ebf;" target="A-JFsdlmlIhan-1mKQRK-12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-41" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-10" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#6c8ebf;" target="A-JFsdlmlIhan-1mKQRK-12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-42" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-12" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#82b366;" target="A-JFsdlmlIhan-1mKQRK-13" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-43" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-13" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#82b366;" target="A-JFsdlmlIhan-1mKQRK-15" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-44" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-12" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#6c8ebf;" target="A-JFsdlmlIhan-1mKQRK-14" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-45" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-14" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#999999;" target="A-JFsdlmlIhan-1mKQRK-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-46" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-16" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#666666;" target="A-JFsdlmlIhan-1mKQRK-17" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-47" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-17" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#6c8ebf;" target="A-JFsdlmlIhan-1mKQRK-18" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-48" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-18" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#6c8ebf;" target="A-JFsdlmlIhan-1mKQRK-19" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-49" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-19" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#82b366;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="A-JFsdlmlIhan-1mKQRK-20" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1100" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-50" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-19" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#6c8ebf;" target="A-JFsdlmlIhan-1mKQRK-21" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-51" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-21" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#6c8ebf;" target="A-JFsdlmlIhan-1mKQRK-22" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-52" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-22" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#999999;" target="A-JFsdlmlIhan-1mKQRK-21" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-53" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-21" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#6c8ebf;" target="A-JFsdlmlIhan-1mKQRK-23" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-54" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-23" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#6c8ebf;" target="A-JFsdlmlIhan-1mKQRK-24" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-55" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-24" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#6c8ebf;" target="A-JFsdlmlIhan-1mKQRK-25" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-56" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-23" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#6c8ebf;" target="A-JFsdlmlIhan-1mKQRK-25" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-57" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-25" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#6c8ebf;" target="A-JFsdlmlIhan-1mKQRK-26" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A-JFsdlmlIhan-1mKQRK-58" edge="1" parent="1" source="A-JFsdlmlIhan-1mKQRK-26" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#999999;" target="A-JFsdlmlIhan-1mKQRK-19" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
